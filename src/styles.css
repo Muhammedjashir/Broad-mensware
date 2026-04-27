@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -9,29 +10,38 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
+
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
   --color-purple: var(--purple);
   --color-blue: var(--blue);
   --color-orange: var(--orange);
   --color-pink: var(--pink);
+
   --font-display: "Instrument Serif", "Cormorant Garamond", serif;
   --font-sans: "Inter", system-ui, sans-serif;
 
@@ -44,16 +54,15 @@
   --animate-spin-slow: spin 30s linear infinite;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap");
-
 :root {
   --radius: 1rem;
 
-  /* BROAD. — black/white base with purple+blue / orange+pink accents */
   --background: oklch(0.99 0.005 300);
   --foreground: oklch(0.14 0 0);
+
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.14 0 0);
+
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.14 0 0);
 
@@ -66,7 +75,7 @@
   --muted: oklch(0.96 0.005 320);
   --muted-foreground: oklch(0.45 0 0);
 
-  --accent: oklch(0.62 0.22 295);              /* purple */
+  --accent: oklch(0.62 0.22 295);
   --accent-foreground: oklch(0.99 0 0);
 
   --destructive: oklch(0.6 0.22 28);
@@ -85,25 +94,37 @@
 .dark {
   --background: oklch(0.1 0 0);
   --foreground: oklch(0.98 0 0);
+
   --card: oklch(0.14 0 0);
   --card-foreground: oklch(0.98 0 0);
+
   --popover: oklch(0.14 0 0);
   --popover-foreground: oklch(0.98 0 0);
+
   --primary: oklch(0.99 0 0);
   --primary-foreground: oklch(0.1 0 0);
+
   --secondary: oklch(0.18 0 0);
   --secondary-foreground: oklch(0.98 0 0);
+
   --muted: oklch(0.18 0 0);
   --muted-foreground: oklch(0.72 0 0);
+
   --accent: oklch(0.7 0.22 295);
   --accent-foreground: oklch(0.1 0 0);
+
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 14%);
   --ring: oklch(0.7 0.22 295);
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
+  * {
+    border-color: var(--color-border);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
   html {
     font-family: var(--font-sans);
@@ -114,27 +135,50 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    line-height: 1.5;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
     font-weight: 400;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
   }
 }
 
 @utility container-px {
   padding-inline: 1.25rem;
-  @media (min-width: 768px) { padding-inline: 2.5rem; }
-  @media (min-width: 1280px) { padding-inline: 4rem; }
+
+  @media (min-width: 768px) {
+    padding-inline: 2.5rem;
+  }
+
+  @media (min-width: 1280px) {
+    padding-inline: 4rem;
+  }
 }
 
 @utility text-blend-gradient {
-  background: linear-gradient(120deg,
+  background: linear-gradient(
+    120deg,
     oklch(0.62 0.22 295),
     oklch(0.62 0.2 250),
     oklch(0.74 0.18 0),
-    oklch(0.74 0.18 50));
+    oklch(0.74 0.18 50)
+  );
+
   background-size: 300% 300%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -143,11 +187,14 @@
 }
 
 @utility bg-blend-gradient {
-  background: linear-gradient(120deg,
+  background: linear-gradient(
+    120deg,
     oklch(0.62 0.22 295),
     oklch(0.62 0.2 250),
     oklch(0.74 0.18 0),
-    oklch(0.74 0.18 50));
+    oklch(0.74 0.18 50)
+  );
+
   background-size: 300% 300%;
   animation: gradient-pan 12s ease infinite;
 }
@@ -159,37 +206,81 @@
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes fade-up {
-  0% { opacity: 0; transform: translateY(24px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 oklch(0.62 0.22 295 / 0.55); }
-  50% { box-shadow: 0 0 0 16px oklch(0.62 0.22 295 / 0); }
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 oklch(0.62 0.22 295 / 0.55);
+  }
+
+  50% {
+    box-shadow: 0 0 0 16px oklch(0.62 0.22 295 / 0);
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -400px 0; }
-  100% { background-position: 400px 0; }
+  0% {
+    background-position: -400px 0;
+  }
+
+  100% {
+    background-position: 400px 0;
+  }
 }
 
 @keyframes blob {
-  0%, 100% { transform: translate(0,0) scale(1); }
-  33% { transform: translate(30px,-20px) scale(1.1); }
-  66% { transform: translate(-20px,30px) scale(0.95); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -20px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 30px) scale(0.95);
+  }
 }
 
 @keyframes gradient-pan {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, oklch(0.62 0.22 295), oklch(0.74 0.18 0), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    oklch(0.62 0.22 295),
+    oklch(0.74 0.18 0),
+    transparent
+  );
 }

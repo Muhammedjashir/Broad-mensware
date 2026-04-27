@@ -14,7 +14,7 @@ export type Category =
   | "Jeans"
   | "Jackets"
   | "Hoodies"
-  | "Casual Wear"
+  | "Casual Wear "
   | "Formal Wear"
   | "Surplus"
   | "Accessories";

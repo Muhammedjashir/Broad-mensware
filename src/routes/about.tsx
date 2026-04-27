@@ -5,7 +5,7 @@ import lifestyle from "@/assets/broad-lifestyle.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About BROAD. — Mananthavady Premium Mens Wear" },
+      { title: "About BROAD. — Mananthavady's Premium Mens Wear" },
       { name: "description", content: "BROAD. is one of the top-rated clothing stores in Mananthavady offering stylish men's fashion, surplus collections and premium quality clothing." },
       { property: "og:title", content: "About — BROAD. Mananthavady" },
       { property: "og:description", content: "Premium men's fashion in Mananthavady, Kerala." },
